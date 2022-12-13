@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         MinWidth="900"
         MinHeight="480"
+        xmlns:material="using:Material.Icons.Avalonia"
         x:Class="AvaloniaClient.Views.MainWindow"
         Background="Transparent"
         TransparencyLevelHint="Mica"
@@ -36,39 +37,79 @@
 
       <Border Classes="container" Grid.Column="0" Grid.Row="0">
         <Border>
-          <Button Classes="primary"> Personals </Button>
+          <Grid RowDefinitions="*,28">
+            <material:MaterialIcon Kind="Doctor"
+                                   Width="100"
+                                   Height="100"></material:MaterialIcon>
+            <Button Classes="primary"
+                    Grid.Row="1"> Personals </Button>
+          </Grid>
         </Border>
       </Border>
       <Border Classes="container" Grid.Column="1" Grid.Row="0">
         <Border>
-          <Button Classes="primary"> Pacients </Button>
+          <Grid RowDefinitions="*,28">
+            <material:MaterialIcon Kind="UserOutline"
+                                   Width="100"
+                                   Height="100"></material:MaterialIcon>
+            <Button Classes="primary"
+                    Grid.Row="1"> Pacients </Button>
+          </Grid>
         </Border>
       </Border>
       <Border Classes="container" Grid.Column="2" Grid.Row="0">
         <Border>
-          <Button Classes="primary"> Budget history </Button>
+          <Grid RowDefinitions="*,28">
+            <material:MaterialIcon Kind="ClipboardCheckOutline"
+                                   Width="100"
+                                   Height="100"></material:MaterialIcon>
+            <Button Classes="primary"
+                    Grid.Row="1"> Budget history </Button>
+          </Grid>
         </Border>
       </Border>
       
       <Border Classes="container" Grid.Column="3" Grid.RowSpan="2">
         <Border>
-          
+          <Grid RowDefinitions="28,*,28">
+            <Label>Today tasks</Label>
+            <Button Classes="primary"
+                    Grid.Row="2"> Open schedule </Button>
+          </Grid>
         </Border>
       </Border>
       
       <Border Classes="container" Grid.Column="0" Grid.Row="1">
         <Border>
-          <Button Classes="primary"> Inventory </Button>
+          <Grid RowDefinitions="*,28">
+            <material:MaterialIcon Kind="BoxVariantClosed"
+                                   Width="100"
+                                   Height="100"></material:MaterialIcon>
+            <Button Classes="primary"
+                    Grid.Row="1"> Inventory </Button>
+          </Grid>
         </Border>
       </Border>
       <Border Classes="container" Grid.Column="1" Grid.Row="1">
         <Border>
-          <Button Classes="primary"> Fillials </Button>
+          <Grid RowDefinitions="*,28">
+            <material:MaterialIcon Kind="BriefcaseUserOutline"
+                                   Width="100"
+                                   Height="100"></material:MaterialIcon>
+            <Button Classes="primary"
+                    Grid.Row="1"> Fillials </Button>
+          </Grid>
         </Border>
       </Border>
       <Border Classes="container" Grid.Column="2" Grid.Row="1">
         <Border>
-          <Button Classes="danger"> Exit </Button>
+          <Grid RowDefinitions="*,28">
+            <material:MaterialIcon Kind="Logout"
+                                   Width="100"
+                                   Height="100"></material:MaterialIcon>
+            <Button Classes="danger"
+                    Grid.Row="1"> Exit </Button>
+          </Grid>
         </Border>
       </Border>
      
