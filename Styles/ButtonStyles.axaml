@@ -3,4 +3,8 @@
   <Style Selector="Button.primary">
     <Setter Property="Background" Value="#922AE8"/>
   </Style>
+
+  <Style Selector="Button.danger">
+    <Setter Property="Background" Value="#F51F62"/>
+  </Style>
 </Styles>

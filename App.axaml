@@ -8,7 +8,14 @@
 
     <Application.Styles>
       <FluentTheme Mode="Dark"/>
+      <StyleInclude Source="avares://Material.Icons.Avalonia/App.xaml"></StyleInclude>
       <StyleInclude Source="/Styles/ButtonStyles.axaml" />
+      <StyleInclude Source="/Styles/Style.axaml" />
     </Application.Styles>
+
+  <Application.Resources>
+    <ResourceDictionary>
+    </ResourceDictionary>
+  </Application.Resources>
   
 </Application>
