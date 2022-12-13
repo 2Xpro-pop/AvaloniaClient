@@ -36,10 +36,12 @@
       <TextBox Text="{Binding Amount}" Margin="0 0 0 35"/>
       <Button Classes="primary"
               HorizontalAlignment="Stretch"
-              HorizontalContentAlignment="Center">Apply</Button>
+              HorizontalContentAlignment="Center"
+              Command="{Binding Apply}">Apply</Button>
       <Button Background="Transparent"
               HorizontalAlignment="Stretch"
-              HorizontalContentAlignment="Center">Cancel</Button>
+              HorizontalContentAlignment="Center"
+              Command="{Binding Cancel}">Cancel</Button>
     </StackPanel>
 
   </Panel>

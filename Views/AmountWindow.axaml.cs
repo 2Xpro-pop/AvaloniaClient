@@ -1,3 +1,4 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.ReactiveUI;
 using AvaloniaClient.ViewModels;
@@ -9,5 +10,12 @@ public partial class AmountWindow : ReactiveWindow<AmountViewModel>
     {
         InitializeComponent();
         ViewModel = new AmountViewModel();
+
+        ViewModel.Apply.Subscribe(result =>
+        {
+            Close(result);
+        });
+
+        ViewModel.Cancel.Subscribe(unit => Close());
     }
 }

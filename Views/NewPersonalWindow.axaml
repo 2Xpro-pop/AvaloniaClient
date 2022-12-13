@@ -48,10 +48,12 @@
       
       <Button Classes="primary"
               HorizontalAlignment="Stretch"
-              HorizontalContentAlignment="Center">Create</Button>
+              HorizontalContentAlignment="Center"
+              Command="{Binding Create}">Create</Button>
       <Button Background="Transparent"
               HorizontalAlignment="Stretch"
-              HorizontalContentAlignment="Center">Cancel</Button>
+              HorizontalContentAlignment="Center"
+              Command="{Binding Cancel}">Cancel</Button>
     </StackPanel>
 
   </Panel>
