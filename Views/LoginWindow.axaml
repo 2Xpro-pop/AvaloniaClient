@@ -38,7 +38,8 @@
       <TextBox Text="{Binding Password}" Margin="0 0 0 35"/>
       <Button Classes="primary" 
               HorizontalAlignment="Stretch"
-              HorizontalContentAlignment="Center">Login</Button>
+              HorizontalContentAlignment="Center"
+              Command="{Binding LoginCommand}">Login</Button>
     </StackPanel>
 
   </Panel>

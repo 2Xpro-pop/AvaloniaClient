@@ -1,3 +1,4 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.ReactiveUI;
 using AvaloniaClient.ViewModels;
@@ -8,6 +9,20 @@ public partial class LoginWindow : ReactiveWindow<LoginWindowViewModel>
     public LoginWindow()
     {
         InitializeComponent();
-        DataContext = new LoginWindowViewModel();
+        ViewModel = new LoginWindowViewModel();
+
+        ViewModel.LoginCommand.Subscribe(result =>
+        {
+            if (result)
+            {
+                Close();
+                App.Current.MainWindow = new MainWindow()
+                {
+                    DataContext = new MainWindowViewModel()
+                };
+                App.Current.Run(App.Current.MainWindow);
+                
+            }
+        });
     }
 }
