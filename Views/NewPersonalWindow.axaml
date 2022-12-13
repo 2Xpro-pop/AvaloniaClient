@@ -7,16 +7,16 @@
         SizeToContent="Height"
         Width="270"
         mc:Ignorable="d"
-        x:Class="AvaloniaClient.Views.LoginWindow"
+        x:Class="AvaloniaClient.Views.NewPersonalWindow"
         Background="Transparent"
         TransparencyLevelHint="Mica"
         Icon="/Assets/avalonia-logo.ico"
         ExtendClientAreaToDecorationsHint="True"
-        x:DataType="vm:LoginWindowViewModel"
+        x:DataType="vm:NewPersonalViewModel"
         Title="AvaloniaClient">
 
   <Design.DataContext>
-    <vm:LoginWindowViewModel/>
+    <vm:NewPersonalViewModel/>
   </Design.DataContext>
 
   <Panel>
@@ -32,13 +32,26 @@
     </ExperimentalAcrylicBorder>
 
     <StackPanel Margin="25" Spacing="8">
-      <Label>Login</Label>
-      <TextBox Text="{Binding Login}"/>
-      <Label>Password</Label>
-      <TextBox Text="{Binding Password}" Margin="0 0 0 35"/>
-      <Button Classes="primary" 
+      
+      <Label>Name</Label>
+      <TextBox Text="{Binding Name}"/>
+      <Label>Surname</Label>
+      <TextBox Text="{Binding Surname}"/>
+
+      <Label IsVisible="{Binding !IsProcent}">Salary</Label>
+      <TextBox IsVisible="{Binding !IsProcent}" Text="{Binding Salary}"/>
+
+      <Label IsVisible="{Binding IsProcent}">Procent</Label>
+      <TextBox IsVisible="{Binding IsProcent}" Text="{Binding Procent}"/>
+
+      <CheckBox IsChecked="{Binding IsProcent}">Is procent salary</CheckBox>
+      
+      <Button Classes="primary"
               HorizontalAlignment="Stretch"
-              HorizontalContentAlignment="Center">Login</Button>
+              HorizontalContentAlignment="Center">Create</Button>
+      <Button Background="Transparent"
+              HorizontalAlignment="Stretch"
+              HorizontalContentAlignment="Center">Cancel</Button>
     </StackPanel>
 
   </Panel>

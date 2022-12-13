@@ -1,4 +1,6 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+<Styles xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Add Resources Here -->
-</ResourceDictionary>
+  <Style Selector="Button.primary">
+    <Setter Property="Background" Value="#922AE8"/>
+  </Style>
+</Styles>

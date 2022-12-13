@@ -3,11 +3,11 @@ using Avalonia.ReactiveUI;
 using AvaloniaClient.ViewModels;
 
 namespace AvaloniaClient.Views;
-public partial class LoginWindow : ReactiveWindow<LoginWindowViewModel>
+public partial class NewPersonalWindow : ReactiveWindow<NewPersonalViewModel>
 {
-    public LoginWindow()
+    public NewPersonalWindow()
     {
         InitializeComponent();
-        DataContext = new LoginWindowViewModel();
+        ViewModel = new NewPersonalViewModel();
     }
 }
