@@ -1,0 +1,14 @@
+using System;
+using Avalonia.Controls;
+using Avalonia.ReactiveUI;
+using ${project}.ViewModels;
+
+namespace ${project}.Views;
+public partial class ${name}Window : ReactiveWindow<${name}ViewModel>
+{
+    public ${name}Window()
+    {
+        InitializeComponent();
+        ViewModel = new ${name}ViewModel();
+    }
+}

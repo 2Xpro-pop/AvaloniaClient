@@ -1,23 +1,19 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AvaloniaClient.ViewModels"
+        xmlns:vm="using:${project}.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         CanResize="False"
         SizeToContent="Height"
-        Width="480"
+        Width="270"
         mc:Ignorable="d"
-        x:Class="AvaloniaClient.Views.LoginWindow"
+        x:Class="${project}.Views.${name}Window"
         Background="Transparent"
         TransparencyLevelHint="Mica"
         Icon="/Assets/avalonia-logo.ico"
         ExtendClientAreaToDecorationsHint="True"
-        x:DataType="vm:LoginWindowViewModel"
+        x:DataType="vm:${name}ViewModel"
         Title="AvaloniaClient">
-
-  <Design.DataContext>
-    <vm:LoginWindowViewModel/>
-  </Design.DataContext>
 
   <Panel>
 
@@ -31,28 +27,6 @@
       </ExperimentalAcrylicBorder.Material>
     </ExperimentalAcrylicBorder>
 
-    <Grid ColumnDefinitions="*,270">
-      
-      <Image Source="/Assets/blue.png" Height="220" Stretch="Uniform"/>
-
-      <StackPanel Margin="25" Spacing="8" Grid.Column="1">
-        <Label>Login</Label>
-        <TextBox Text="{Binding Login}"/>
-        <Label>Password</Label>
-        <TextBox Text="{Binding Password}" Margin="0 0 0 15"/>
-        <TextBlock Text="{Binding Status}" Classes="erorr"/>
-        <Button Classes="primary"
-                HorizontalAlignment="Stretch"
-                HorizontalContentAlignment="Center"
-                Command="{Binding LoginCommand}">Login</Button>
-      </StackPanel>
-      
-    </Grid>
-
-    
-
   </Panel>
-
-
 
 </Window>

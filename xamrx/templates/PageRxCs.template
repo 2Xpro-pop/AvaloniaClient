@@ -1,0 +1,19 @@
+using Avalonia.Controls;
+using Avalonia.Data;
+using Avalonia.ReactiveUI;
+using ${project}.ViewModels;
+using ReactiveUI;
+using System;
+
+namespace ${project}.Views
+{
+	public partial class ${name}View : ReactiveUserControl<${name}ViewModel>
+	{
+		public ${name}View ()
+		{
+			InitializeComponent ();
+
+            ViewModel = new ${name}ViewModel();
+		}
+	}
+}

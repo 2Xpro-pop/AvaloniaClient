@@ -21,5 +21,9 @@
     <Setter Property="HorizontalAlignment" Value="Stretch"/>
   </Style>
 
+  <Style Selector="TextBlock.erorr">
+    <Setter Property="Foreground" Value="Red"/>
+  </Style>
+
     <!-- Add Styles Here -->
 </Styles>
