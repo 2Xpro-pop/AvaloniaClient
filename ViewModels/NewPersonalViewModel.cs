@@ -14,7 +14,7 @@ public class NewPersonalViewModel : ViewModelBase
     [Reactive] public bool IsProcent { get; set; }
     [Reactive] public double Procent { get; set; } = 15.3d;
 
-    public ReactiveCommand<Unit, Unit> Create { get; }
+    public ReactiveCommand<Unit, bool> Create { get; }
     public ReactiveCommand<Unit, Unit> Cancel { get; }
 
     public NewPersonalViewModel()
@@ -22,6 +22,7 @@ public class NewPersonalViewModel : ViewModelBase
         Create = ReactiveCommand.Create(() =>
         {
 
+            return false;
         });
 
         Cancel = ReactiveCommand.Create(() =>

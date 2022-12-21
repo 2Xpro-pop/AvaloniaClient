@@ -12,6 +12,7 @@
     <None Remove=".gitignore" />
     <None Remove="Assets\blue.png" />
     <None Remove="Assets\brown.png" />
+    <None Remove="Assets\purple.png" />
   </ItemGroup>
   <ItemGroup>
     <!--This helps with theme dll-s trimming.

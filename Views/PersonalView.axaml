@@ -8,5 +8,28 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaClient.Views.PersonalView"
              x:DataType="vm:PersonalViewModel">
-  
+  <StackPanel>
+
+    <Panel Classes="corner-bg">
+      <DataGrid Items="{Binding Fillials}"
+                SelectedItem="{Binding SelectedFillial}"
+                CanUserResizeColumns="True"
+                Classes="my-1"
+                x:Name="fillialsDataGrid">
+        <DataGrid.Columns >
+          <DataGridTextColumn Header="Name" Width="220"  Binding="{Binding Name}"/>
+          <DataGridTextColumn Header="Salary" Width="150" Binding="{Binding Address}" />
+          <DataGridTextColumn IsReadOnly="True" Header="Budget" Width="150" Binding="{Binding Budget}" />
+        </DataGrid.Columns>
+      </DataGrid>
+      <Image Classes="bg-icon right" Margin="50" Height="200" Source="/Assets/purple.png" />
+    </Panel>
+
+    <StackPanel Orientation="Horizontal" Spacing="25">
+      <Button Classes="secondary" Command="{Binding Add}">Добавить</Button>
+      <Button Command="{Binding AddBudget}">Выделить/Урезать бюджет</Button>
+      <Button Command="{Binding Save}">Сохранить</Button>
+    </StackPanel>
+
+  </StackPanel>
 </UserControl>
