@@ -2,6 +2,10 @@ using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
+using AvaloniaClient.ViewModels;
+using AvaloniaClient.Views;
+using ReactiveUI;
+using Splat;
 
 namespace AvaloniaClient;
 internal class Program
@@ -15,7 +19,10 @@ internal class Program
 
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
-        => AppBuilder.Configure<App>()
+    {
+        Locator.CurrentMutable.Register(() => new FillialsView(), typeof(IViewFor<FillialsViewModel>));
+
+        return AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .LogToTrace()
             .UseReactiveUI()
@@ -23,4 +30,5 @@ internal class Program
             {
                 UseWindowsUIComposition = true
             });
+    }
 }

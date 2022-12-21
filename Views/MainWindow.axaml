@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:AvaloniaClient.ViewModels"
+        xmlns:rxui="using:Avalonia.ReactiveUI"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         MinWidth="900"
@@ -29,93 +30,106 @@
       </ExperimentalAcrylicBorder.Material>
     
     </ExperimentalAcrylicBorder>
+    <Grid RowDefinitions="45,*" >
+      <Border Padding="15, 10, 0, 0">
+        <Button Command="{Binding GoBack}" >Back</Button>
+      </Border>
+      
+      <ScrollViewer Margin="20" Grid.Row="1">
+        <rxui:RoutedViewHost Router="{Binding Router}" >
+          <rxui:RoutedViewHost.DefaultContent>
+            <Grid ColumnDefinitions="*,*,*,1.3*"
+            RowDefinitions="*,*"
+            Margin="45">
 
-    <Grid ColumnDefinitions="*,*,*,1.3*" 
-          RowDefinitions="*,*"
-          
-          Margin="45">
 
-      <Border Classes="container" Grid.Column="0" Grid.Row="0">
-        <Border>
-          <Grid RowDefinitions="*,28">
-            <material:MaterialIcon Kind="Doctor"
-                                   Width="100"
-                                   Height="100"></material:MaterialIcon>
-            <Button Classes="primary"
-                    Grid.Row="1"> Personals </Button>
-          </Grid>
-        </Border>
-      </Border>
-      <Border Classes="container" Grid.Column="1" Grid.Row="0">
-        <Border>
-          <Grid RowDefinitions="*,28">
-            <material:MaterialIcon Kind="UserOutline"
-                                   Width="100"
-                                   Height="100"></material:MaterialIcon>
-            <Button Classes="primary"
-                    Grid.Row="1"> Pacients </Button>
-          </Grid>
-        </Border>
-      </Border>
-      <Border Classes="container" Grid.Column="2" Grid.Row="0">
-        <Border>
-          <Grid RowDefinitions="*,28">
-            <material:MaterialIcon Kind="ClipboardCheckOutline"
-                                   Width="100"
-                                   Height="100"></material:MaterialIcon>
-            <Button Classes="primary"
-                    Grid.Row="1"> Budget history </Button>
-          </Grid>
-        </Border>
-      </Border>
-      
-      <Border Classes="container" Grid.Column="3" Grid.RowSpan="2">
-        <Border>
-          <Grid RowDefinitions="28,*,28">
-            <Label>Today tasks</Label>
-            <Button Classes="primary"
-                    Grid.Row="2"> Open schedule </Button>
-          </Grid>
-        </Border>
-      </Border>
-      
-      <Border Classes="container" Grid.Column="0" Grid.Row="1">
-        <Border>
-          <Grid RowDefinitions="*,28">
-            <material:MaterialIcon Kind="BoxVariantClosed"
-                                   Width="100"
-                                   Height="100"></material:MaterialIcon>
-            <Button Classes="primary"
-                    Grid.Row="1"> Inventory </Button>
-          </Grid>
-        </Border>
-      </Border>
-      <Border Classes="container" Grid.Column="1" Grid.Row="1">
-        <Border>
-          <Grid RowDefinitions="*,28">
-            <material:MaterialIcon Kind="BriefcaseUserOutline"
-                                   Width="100"
-                                   Height="100"></material:MaterialIcon>
-            <Button Classes="primary"
-                    Grid.Row="1"> Fillials </Button>
-          </Grid>
-        </Border>
-      </Border>
-      <Border Classes="container" Grid.Column="2" Grid.Row="1">
-        <Border>
-          <Grid RowDefinitions="*,28">
-            <material:MaterialIcon Kind="Logout"
-                                   Width="100"
-                                   Height="100"></material:MaterialIcon>
-            <Button Classes="danger"
-                    Grid.Row="1"> Exit </Button>
-          </Grid>
-        </Border>
-      </Border>
-     
-      
+
+              <Border Classes="container" Grid.Column="0" Grid.Row="0">
+                <Border>
+                  <Grid RowDefinitions="*,28">
+                    <material:MaterialIcon Kind="Doctor"
+                                           Width="100"
+                                           Height="100"></material:MaterialIcon>
+                    <Button Classes="primary"
+                            Grid.Row="1"> Personals </Button>
+                  </Grid>
+                </Border>
+              </Border>
+              <Border Classes="container" Grid.Column="1" Grid.Row="0">
+                <Border>
+                  <Grid RowDefinitions="*,28">
+                    <material:MaterialIcon Kind="UserOutline"
+                                           Width="100"
+                                           Height="100"></material:MaterialIcon>
+                    <Button Classes="primary"
+                            Grid.Row="1"> Pacients </Button>
+                  </Grid>
+                </Border>
+              </Border>
+              <Border Classes="container" Grid.Column="2" Grid.Row="0">
+                <Border>
+                  <Grid RowDefinitions="*,28">
+                    <material:MaterialIcon Kind="ClipboardCheckOutline"
+                                           Width="100"
+                                           Height="100"></material:MaterialIcon>
+                    <Button Classes="primary"
+                            Grid.Row="1"> Budget history </Button>
+                  </Grid>
+                </Border>
+              </Border>
+
+              <Border Classes="container" Grid.Column="3" Grid.RowSpan="2">
+                <Border>
+                  <Grid RowDefinitions="28,*,28">
+                    <Label>Today tasks</Label>
+                    <Button Classes="primary"
+                            Grid.Row="2"> Open schedule </Button>
+                  </Grid>
+                </Border>
+              </Border>
+
+              <Border Classes="container" Grid.Column="0" Grid.Row="1">
+                <Border>
+                  <Grid RowDefinitions="*,28">
+                    <material:MaterialIcon Kind="BoxVariantClosed"
+                                           Width="100"
+                                           Height="100"></material:MaterialIcon>
+                    <Button Classes="primary"
+                            Grid.Row="1"> Inventory </Button>
+                  </Grid>
+                </Border>
+              </Border>
+              <Border Classes="container" Grid.Column="1" Grid.Row="1">
+                <Border>
+                  <Grid RowDefinitions="*,28">
+                    <material:MaterialIcon Kind="BriefcaseUserOutline"
+                                           Width="100"
+                                           Height="100"></material:MaterialIcon>
+                    <Button Classes="primary"
+                            Command="{Binding GoToFillials}"
+                            Grid.Row="1"> Fillials </Button>
+                  </Grid>
+                </Border>
+              </Border>
+              <Border Classes="container" Grid.Column="2" Grid.Row="1">
+                <Border>
+                  <Grid RowDefinitions="*,28">
+                    <material:MaterialIcon Kind="Logout"
+                                           Width="100"
+                                           Height="100"></material:MaterialIcon>
+                    <Button Classes="danger"
+                            Grid.Row="1"> Exit </Button>
+                  </Grid>
+                </Border>
+              </Border>
+
+
+            </Grid>
+          </rxui:RoutedViewHost.DefaultContent>
+        </rxui:RoutedViewHost>
+      </ScrollViewer>
     </Grid>
-
+    
   </Panel>
 
     

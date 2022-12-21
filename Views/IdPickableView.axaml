@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:AvaloniaClient.ViewModels"
+             xmlns:models="using:AvaloniaClient.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaClient.Views.IdPickableView"
+             x:DataType="vm:IdPickableViewModel">
+  <ComboBox Name="comboBox"
+              CornerRadius="0"
+              HorizontalAlignment="Stretch">
+    <ComboBox.ItemTemplate>
+      <DataTemplate>
+        <TextBlock Text="{Binding Description}" />
+      </DataTemplate>
+    </ComboBox.ItemTemplate>
+  </ComboBox>
+</UserControl>
